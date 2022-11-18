@@ -50,7 +50,7 @@ class BookMonkeyApi implements BookMonkeyApiClient {
     return book;
   }
 
-  async deleteBook(isbn: ISBN) {}
+  /* async deleteBook(isbn: ISBN) {} */
 }
 
 const api = new BookMonkeyApi() as BookMonkeyApiClient;
