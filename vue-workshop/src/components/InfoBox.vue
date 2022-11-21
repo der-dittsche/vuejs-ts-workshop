@@ -1,11 +1,11 @@
 <template>
   <div>
-    <button @click="toggleColor">
+    <button @click="toggleClick">
       <span v-if="isVisible">Hide</span>
       <span v-else>Show</span>
     </button>
 
-    <div v-show="isVisible" v-bind:class="{ box: isVisible }">
+    <div v-show="isVisible" v-bind:class="{ box: isVisible, border: isActive }">
       <ul v-for="item in items" :key="item.id">
         <li>
           <div v-bind:class="{ red: isActive }">{{ item.header }}</div>
@@ -15,8 +15,8 @@
           <div v-bind:class="{ green: isActive }">{{ item.text }}</div>
         </li>
       </ul>
+      <button @click="toggleColor">Color</button>
     </div>
-    <button @click="toggleColor">Color</button>
   </div>
 </template>
 
