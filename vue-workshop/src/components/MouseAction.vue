@@ -5,7 +5,11 @@
     </p>
 
     <div v-show="isVisible">
-      <div class="mousebox" @mousemove="onMouseMove"></div>
+      <div
+        class="mousebox"
+        v-bind:class="{ mouseboxboder: isActive }"
+        @mousemove="onMouseMove"
+      ></div>
     </div>
     <button @click="toggleClick">
       <span v-if="isVisible">Hide</span>
@@ -22,6 +26,7 @@ interface ComponentData {
   x: number;
   y: number;
   isVisible: boolean;
+  isActive: boolean;
 }
 
 export default defineComponent({
@@ -32,6 +37,7 @@ export default defineComponent({
       x: 12,
       y: 4,
       isVisible: true,
+      isActive: true,
     };
   },
   methods: {
@@ -43,14 +49,29 @@ export default defineComponent({
       this.y = event.y;
     },
   },
+  watch: {
+    x(newValue: number): void {
+      if (newValue > 150) {
+        alert("150");
+      }
+    },
+    y(newValue: number, oldValue: number): void {
+      if (newValue < oldValue && oldValue > 300) {
+        alert("y over 300");
+        this.y = 0;
+      }
+    },
+  },
 });
 </script>
 
-<style>
+<style scoped>
 .mousebox {
   height: 15em;
   width: 20em;
-  border: 1px solid black;
   background-color: white;
+}
+.mouseboxboder {
+  border: 1px solid black;
 }
 </style>
