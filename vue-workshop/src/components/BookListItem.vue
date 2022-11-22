@@ -3,7 +3,11 @@
     <td>
       {{ title }} <small>{{ subtitle }}</small>
     </td>
-    <td>{{ isbn }}</td>
+    <td>
+      <router-link :to="{ name: 'booksdetails', params: { isbn: isbn } }">
+        {{ isbn }}
+      </router-link>
+    </td>
     <td>{{ numPages }}</td>
   </tr>
 </template>

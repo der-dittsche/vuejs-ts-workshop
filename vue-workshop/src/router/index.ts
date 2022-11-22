@@ -6,6 +6,7 @@ import {
 
 import HomeView from "@/views/HomeView.vue";
 import AboutView from "@/views/AboutView.vue";
+import BookListDetails from "@/views/BookListDetails.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -16,6 +17,12 @@ const routes: Array<RouteRecordRaw> = [
     path: "/books",
     name: "books",
     component: HomeView,
+  },
+  {
+    path: "/books/:isbn",
+    name: "booksdetails",
+    component: BookListDetails,
+    props: true,
   },
   {
     path: "/about",
