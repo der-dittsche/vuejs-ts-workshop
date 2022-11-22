@@ -4,13 +4,11 @@
       {{ title }} <small>{{ subtitle }}</small>
     </td>
     <td>{{ isbn }}</td>
-    <td>{{ numPages }}</td>
   </tr>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-
 export default defineComponent({
   name: "BookListItem",
   props: {

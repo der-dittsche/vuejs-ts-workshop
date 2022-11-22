@@ -1,17 +1,7 @@
 <template>
   <div class="nav">
-    <router-link
-      class="navItem"
-      active-class="is-active"
-      :to="{ name: 'books' }"
-      >Home</router-link
-    >
-    <router-link
-      class="navItem"
-      active-class="is-active"
-      :to="{ name: 'about' }"
-      >About</router-link
-    >
+    <div class="navItem">Home</div>
+    <div class="navItem">About</div>
   </div>
 </template>
 <style>
@@ -28,7 +18,7 @@
   text-align: center;
   padding-right: 3em;
 }
-.is-active {
+.navItem:hover {
   background-color: bisque;
 }
 </style>

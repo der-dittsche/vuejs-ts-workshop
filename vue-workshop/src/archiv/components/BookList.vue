@@ -9,11 +9,9 @@ import { defineComponent } from "vue";
 import BookListItem from "@/components/BookListItem.vue";
 import type { Book } from "@/includes/type";
 import BOOKS from "@/stores/books";
-
 interface ComponentData {
   books: Book[];
 }
-
 export default defineComponent({
   name: "BookList",
   components: {
@@ -26,14 +24,6 @@ export default defineComponent({
   },
   created() {
     this.books = [...BOOKS];
-  },
-  mounted() {
-    const baseUrl = "http://localhost:4730/books";
-    fetch(baseUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        this.books = data as Book[];
-      });
   },
 });
 </script>
