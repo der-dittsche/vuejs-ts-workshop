@@ -7,6 +7,8 @@ import {
 import HomeView from "@/views/HomeView.vue";
 import AboutView from "@/views/AboutView.vue";
 import BookListDetails from "@/views/BookListDetails.vue";
+import BookList from "@/components/BookList.vue";
+import BookEdit from "@/views/BookEdit.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -19,9 +21,20 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView,
   },
   {
+    path: "/bookslist",
+    name: "bookslist",
+    component: BookList,
+  },
+  {
     path: "/books/:isbn",
     name: "booksdetails",
     component: BookListDetails,
+    props: true,
+  },
+  {
+    path: "/books/:isbn",
+    name: "bookedit",
+    component: BookEdit,
     props: true,
   },
   {
